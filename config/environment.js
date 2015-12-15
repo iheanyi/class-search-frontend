@@ -6,6 +6,10 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    hostname: 'http://localhost:4000',
+    contentSecurityPolicy: {
+      'connect-src': "'self' http://localhost:*",
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -25,6 +29,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.hostname = 'http://localhost:4000';
   }
 
   if (environment === 'test') {
@@ -40,7 +45,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.hostname = 'https://api.ndsearch.co';
   }
 
   return ENV;
