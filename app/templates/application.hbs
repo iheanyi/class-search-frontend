@@ -3,6 +3,8 @@
 <ul>
   {{#each model as |term|}}
     {{term.tag}} - {{term.name}}
+  {{else}}
+    No terms found.
   {{/each}}
 </ul>
 {{outlet}}
